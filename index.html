@@ -25,7 +25,7 @@
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-        /* HERO – Desktop */
+        /* HERO */
         #home{
             min-height:100vh;
             min-height:100dvh;
@@ -39,20 +39,18 @@
             position:relative;
             overflow:hidden;
         }
-
-        /* MOBILE HERO – 76vh / 76dvh + TEXT VERY LOW */
         @media(max-width:768px){
             #home{
-                min-height:76vh !important;
+                min-height:76vh;
                 min-height:76dvh;
                 background-attachment:scroll;
                 display:flex;
                 align-items:flex-end;
                 justify-content:center;
-                padding-bottom:2vh;
+                padding-bottom:6vh;
             }
             .hero-content{
-                margin-bottom:36vh;
+                margin-bottom:16vh;           /* Perfectly positioned text */
                 padding:0 1.2rem;
                 text-align:center;
                 width:100%;
@@ -60,33 +58,9 @@
             .hero-content h1{font-size:clamp(2.4rem,9.5vw,3.8rem)}
             .hero-content p{font-size:clamp(1.2rem,6vw,2rem)}
         }
-
-        .hero-content{
-            max-width:1200px;
-            width:100%;
-            margin:auto;
-            padding:2rem 1.5rem;
-            position:relative;
-            z-index:2;
-        }
-        .hero-content h1{
-            font-family:'Playfair Display',serif;
-            font-size:clamp(2.3rem,6.5vw,5.2rem);
-            color:var(--gold);
-            text-shadow:4px 4px 22px rgba(0,0,0,.9);
-            margin:0 0 1rem;
-            line-height:1.1;
-            letter-spacing:0.6px;
-            font-weight:700;
-        }
-        .hero-content p{
-            font-size:clamp(1.1rem,3vw,2.2rem);
-            margin:0;
-            font-weight:600;
-            letter-spacing:0.8px;
-            text-shadow:3px 3px 16px rgba(0,0,0,.95);
-            line-height:1.4;
-        }
+        .hero-content{max-width:1200px;width:100%;margin:auto;padding:2rem 1.5rem;position:relative;z-index:2}
+        .hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,6.5vw,5.2rem);color:var(--gold);text-shadow:4px 4px 22px rgba(0,0,0,.9);margin:0 0 1rem;line-height:1.1;letter-spacing:0.6px;font-weight:700}
+        .hero-content p{font-size:clamp(1.1rem,3vw,2.2rem);margin:0;font-weight:600;letter-spacing:0.8px;text-shadow:3px 3px 16px rgba(0,0,0,.95);line-height:1.4}
 
         section{padding:6rem 1.5rem 4rem;max-width:1300px;margin:auto;scroll-margin-top:90px}
         h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:var(--navy);text-align:center;margin:2rem 0 1.8rem;position:relative}
@@ -94,6 +68,13 @@
         .card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 14px 36px rgba(10,55,97,.12);transition:.35s;margin-bottom:2rem}
         .card:hover{transform:translateY(-12px);box-shadow:0 24px 48px rgba(10,55,97,.22)}
         .card-body{padding:2.4rem}
+
+        /* Spacing fixes */
+        #about .card-body p{margin-bottom:1.8rem}
+        #about .card-body p:last-child{margin-bottom:0}
+        #consultancy .card-body h3{margin:2.8rem 0 1.2rem;font-size:1.6rem}
+        #consultancy .card-body h3:first-child{margin-top:0}
+
         .profile{text-align:center;padding:3rem 1rem 1rem}
         .profile img{width:200px;height:200px;border-radius:50%;border:5px solid var(--gold);object-fit:cover;margin:0 auto 1.6rem;box-shadow:0 14px 36px rgba(10,55,97,.22);object-position:center 15%}
 
@@ -109,7 +90,7 @@
         .socials a{font-size:2.4rem;color:var(--navy);transition:.4s}
         .socials a:hover{color:var(--gold);transform:scale(1.3) rotate(8deg)}
 
-        .comp-list h3{color:var(--navy);font-size:1.5rem;margin:2.4rem 0 1rem;border-bottom:3px solid var(--gold);padding-bottom:.5rem;display:inline-block}
+        .comp-list h3{color:var(--navy);font-size:1.5rem;margin:2.8rem 0 1.2rem;border-bottom:3px solid var(--gold);padding-bottom:.6rem;display:inline-block}
         .table-container{overflow-x:auto;margin:2.4rem 0;border-radius:12px;box-shadow:0 10px 28px rgba(10,55,97,.08)}
         table{width:100%;min-width:600px;border-collapse:collapse;border:1px solid var(--border);font-size:.88rem}
         th{background:var(--navy);color:var(--white);padding:0.9rem 0.8rem;text-align:left;font-weight:600}
@@ -162,7 +143,7 @@
     </div>
 </nav>
 
-<!-- HERO – 76vh / 76dvh + TEXT LOW ON MOBILE -->
+<!-- HERO -->
 <section id="home">
     <div class="hero-content">
         <h1>Romeo Adams Consulting Services</h1>
@@ -208,30 +189,68 @@
     </div></div>
 </section>
 
-<!-- COMPETENCIES -->
+<!-- COMPETENCIES – GOLD BULLETS RESTORED -->
 <section id="competencies">
     <h2>Competencies</h2>
     <div class="comp-list" style="max-width:1000px;margin:auto">
         <h3>Knowledge</h3>
-        <ul>
-            <li>Knowledge of constitutional, legal and institutional arrangements governing the South African employment law, including the public service.</li>
-            <li>Understanding of global, regional and local, economic and social impacts on the programmes of government</li>
-            <li>Parliamentary practice, process and procedure</li>
-            <li>People management and organisational development practices</li>
-            <li>Access to information, archives, critical infrastructure protection and information security legislative frameworks</li>
+        <ul style="list-style:none;padding-left:0">
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Knowledge of constitutional, legal and institutional arrangements governing the South African employment law, including the public service.
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Understanding of global, regional and local, economic and social impacts on the programmes of government
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Parliamentary practice, process and procedure
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                People management and organisational development practices
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Access to information, archives, critical infrastructure protection and information security legislative frameworks
+            </li>
         </ul>
+
         <h3>Skills</h3>
-        <ul>
-            <li>Strategic Leadership Capability and Analytical & Problem-solving skills</li>
-            <li>Organisation and Management skills [incl. financial & project management]</li>
-            <li>Conflict Resolution and Crises & Change Management skills</li>
-            <li>Excellent Communication & Interpersonal Skills</li>
+        <ul style="list-style:none;padding-left:0">
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Strategic Leadership Capability and Analytical & Problem-solving skills
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Organisation and Management skills [incl. financial & project management]
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Conflict Resolution and Crises & Change Management skills
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Excellent Communication & Interpersonal Skills
+            </li>
         </ul>
+
         <h3>Personal Attributes</h3>
-        <ul>
-            <li>Innovative Thinking; Outcomes Focussed & Receptive to Suggestions and Innovation</li>
-            <li>Committed to Transformation; Client Orientated and Service Delivery Focussed</li>
-            <li>Dynamic, Unconventional, Energetic, Go-getting, Self-starter</li>
+        <ul style="list-style:none;padding-left:0">
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Innovative Thinking; Outcomes Focussed & Receptive to Suggestions and Innovation
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Committed to Transformation; Client Orientated and Service Delivery Focussed
+            </li>
+            <li style="position:relative;padding-left:2.8rem;margin-bottom:1rem">
+                <i class="fas fa-check-circle" style="position:absolute;left:0;top:0.35rem;color:var(--gold);font-size:1.4rem"></i>
+                Dynamic, Unconventional, Energetic, Go-getting, Self-starter
+            </li>
         </ul>
     </div>
 </section>
@@ -275,7 +294,7 @@
                 <tr><td>Limpopo Provincial Legislature, LEBOWAKGOMO, Limpopo</td><td>Head of Human Resources Management & Labour Relations</td><td>Jun 2011</td><td>Jul 2013</td></tr>
                 <tr><td>Cape Town Routes Unlimited [DMO], CAPE TOWN</td><td>Executive Manager: Marketing & Organisational Supports</td><td>Oct 2008</td><td>Jun 2011</td></tr>
                 <tr><td>National Prosecuting Authority of South Africa [NPA], PRETORIA</td><td>Executive Manager: HRM & D</td><td>Dec 2007</td><td>Sep 2008</td></tr>
-                <tr><td>Dept. of Economic Development & Tourism, CAPE T</td><td>Head: HRM & Support Services</td><td>Oct 2003</td><td>Nov 2007</td></tr>
+                <tr><td>Dept. of Economic Development & Tourism, CAPE TOWN</td><td>Head: HRM & Support Services</td><td>Oct 2003</td><td>Nov 2007</td></tr>
             </table>
         </div>
         <p style="text-align:center;font-weight:600;color:var(--navy);margin-top:2.5rem">Romeo is currently on <strong>(soft) retirement</strong> — available for select mandates.</p>
